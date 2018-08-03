@@ -1,6 +1,8 @@
 package com.errantbyte.receiver;
 
 import android.os.Bundle;
+import android.support.design.widget.NavigationView;
+import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
 import android.support.v7.widget.Toolbar;
@@ -8,6 +10,7 @@ import android.support.v7.widget.Toolbar;
 public class MainActivity extends AppCompatActivity {
 
     private static final int LAYOUT = R.layout.main_activity;
+    private DrawerLayout drawerLayout;
     private Toolbar toolbar;
 
     @Override
@@ -17,6 +20,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(LAYOUT);
 
         initToolbar();
+        initNavigate();
     }
 
     private void initToolbar() {
@@ -29,5 +33,10 @@ public class MainActivity extends AppCompatActivity {
             }
         });
         toolbar.inflateMenu(R.menu.menu);
+    }
+
+    private void initNavigate() {
+        drawerLayout = (DrawerLayout) findViewById(R.id.draw_layout);
+
     }
 }
